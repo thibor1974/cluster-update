@@ -1,0 +1,77 @@
+---
+apiVersion: operator.openshift.io/v1alpha1
+kind: ImageContentSourcePolicy
+metadata:
+  name: generic-0
+spec:
+  repositoryDigestMirrors:
+  - mirrors:
+    - registry.ocp.lan:15443/ocp-mirror/ubi8
+    source: registry.redhat.io/ubi8
+  - mirrors:
+    - registry.ocp.lan:15443/ocp-mirror/ubi8
+    source: registry.access.redhat.com/ubi8
+---
+apiVersion: operator.openshift.io/v1alpha1
+kind: ImageContentSourcePolicy
+metadata:
+  labels:
+    operators.openshift.org/catalog: "true"
+  name: operator-0
+spec:
+  repositoryDigestMirrors:
+  - mirrors:
+    - registry.ocp.lan:15443/ocp-mirror/ubi8
+    source: registry.redhat.io/ubi8
+  - mirrors:
+    - registry.ocp.lan:15443/ocp-mirror/openshift-update-service
+    source: registry.redhat.io/openshift-update-service
+  - mirrors:
+    - registry.ocp.lan:15443/ocp-mirror/rh-sso-7
+    source: registry.redhat.io/rh-sso-7
+  - mirrors:
+    - registry.ocp.lan:15443/ocp-mirror/openshift-gitops-1
+    source: registry.redhat.io/openshift-gitops-1
+  - mirrors:
+    - registry.ocp.lan:15443/ocp-mirror/openshift-logging
+    source: registry.redhat.io/openshift-logging
+  - mirrors:
+    - registry.ocp.lan:15443/ocp-mirror/openshift4
+    source: registry.redhat.io/openshift4
+  - mirrors:
+    - registry.ocp.lan:15443/ocp-mirror/openshift-pipelines
+    source: registry.redhat.io/openshift-pipelines
+  - mirrors:
+    - registry.ocp.lan:15443/ocp-mirror/ocp-tools-4-tech-preview
+    source: registry.redhat.io/ocp-tools-4-tech-preview
+  - mirrors:
+    - registry.ocp.lan:15443/ocp-mirror/nutanix
+    source: registry.connect.redhat.com/nutanix
+  - mirrors:
+    - registry.ocp.lan:15443/ocp-mirror/rhel8
+    source: registry.redhat.io/rhel8
+  - mirrors:
+    - registry.ocp.lan:15443/ocp-mirror/sig-storage
+    source: registry.k8s.io/sig-storage
+  - mirrors:
+    - registry.ocp.lan:15443/ocp-mirror/openshift-serverless-1
+    source: registry.redhat.io/openshift-serverless-1
+  - mirrors:
+    - registry.ocp.lan:15443/ocp-mirror/redhat
+    source: registry.redhat.io/redhat
+  - mirrors:
+    - registry.ocp.lan:15443/ocp-mirror/compliance
+    source: registry.redhat.io/compliance
+---
+apiVersion: operator.openshift.io/v1alpha1
+kind: ImageContentSourcePolicy
+metadata:
+  name: release-0
+spec:
+  repositoryDigestMirrors:
+  - mirrors:
+    - registry.ocp.lan:15443/ocp-mirror/openshift/release
+    source: quay.io/openshift-release-dev/ocp-v4.0-art-dev
+  - mirrors:
+    - registry.ocp.lan:15443/ocp-mirror/openshift/release-images
+    source: quay.io/openshift-release-dev/ocp-release
